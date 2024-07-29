@@ -13,7 +13,7 @@ class APIClient():
 
     
     def ACoT_pipeline(self, statement):
-        client = OpenAI(api_key=os.getenv("sk-proj-vmsrdV6EVZgo2IcBMWCET3BlbkFJwRKgRYvabPOp48wS6wZ5"))
+        client = OpenAI(api_key=os.getenv(""))
         
         messages = [{"role": "system", "content":f"""
                     You are a climate change communications expert. You will be given a paragraph that possibly alludes to climate skepticism. Use this codebook to assign it a category.
