@@ -19,7 +19,7 @@ class APIEJClient():
     # Automatic chain of thought. 
     def ACoT_pipeline(self, statement):
         messages = [{"role": "system", "content":f"""
-                    You are a climate change communications expert. You will be given a paragraph from a conservative think tank that possibly weaponizes or attacks environmental justice. Use this codebook to assign it a category.
+                    You are a climate change communications expert. You will be given a paragraph from a conservative think tank that possibly weaponizi or attacks environmental justice. Use this codebook to assign it a category if the paragraph alludes to any of categories.
                     
                     TEXT:
                     {statement}
