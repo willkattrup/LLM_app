@@ -26,23 +26,23 @@ class APIEJClient():
                     
                     CODEBOOK:
                     <category id="1">1 - Justice weaponization: The use of justice rhetoric to oppose climate/environmental action.</category>
-                    <category id="1.1">1.1 - Fossil fuels / Deregulation help marginalized people: Fossil fuels, deregulation, and the BAU help marginalized people or otherwise bring them justice.</category>
-                    <category id="1.1.1">1.1.1 - Developing countries need fossil fuels: Developing countries deserve fossil fuels in order to provide for themselves and/or grow their economies.</category>
-                    <category id="1.2">1.2 - Pro-environment policies hurt marginalized people: Environmental regulation and climate action hurt marginalized people or otherwise do them an injustice.</category>
-                    <category id="1.2.1">1.2.1 - Pro-environment policies increase the cost of goods and services: Environmental regulation and climate action increase the cost of goods and services, thus disproportionately harming marginalized communitites.</category>
-                    <category id="1.2.2">1.2.2 - The energy transition will disproportionately hurt the developing world: The clean energy transition will hurt people in the developing world, whether by preventing them from accessing affordable energy or forcing them to engage in harmful labor in order to gather the resources necessary for clean energy technology</category>
-                    <category id="2">2 - EJ as waste: Environmental or climate justice policies are a waste of government resources.</category>
-                    <category id="2.1">2.1 - EJ initiatives add unnecessary bureaucracy: Adding social justice into environmental regulation creates further bureacratic burden that slows projects or is otherwise unfair to businesses.</category>
-                    <category id="2.1.1">2.1.1 - EJ initiatives will slow processes down necessary to address the climate emergency: The bureacratic burden created by EJ policies will hamper the development of renewable energy infrastructure.</category>
-                    <category id="3">3 - EJ doubt: Environmental/climate injustice are not real; policies to address these injustices are unnecessary.</category>
+                    <category id="1.1">1.1 - Fossil fuels / Deregulation help marginalized people</category>
+                    <category id="1.1.1">1.1.1 - Developing countries need/deserve fossil fuels.</category>
+                    <category id="1.2">1.2 - Pro-environment policies hurt marginalized people: Environmental regulation and climate action hurt marginalized people.</category>
+                    <category id="1.2.1">1.2.1 - Pro-environment policies increase the cost of goods and services, potentially harming marginalized communities.</category>
+                    <category id="1.2.2">1.2.2 - The energy transition will disproportionately hurt the developing world.</category>
+                    <category id="2">2 - Environmental justice as waste: Environmental or climate justice policies are a waste of government resources.</category>
+                    <category id="2.1">2.1 - Environmental justice initiatives add unnecessary bureaucracy</category>
+                    <category id="2.1.1">2.1.1 - Environmental justice initiatives will slow processes down necessary to address the climate emergency: The bureacratic burden created by EJ policies will hamper the development of renewable energy infrastructure.</category>
+                    <category id="3">3 - Environmental justice doubt: Environmental/climate injustice are not real</category>
                     <category id="3.1">3.1 - Questioning the science: There is not a scientific consensus that confirms the disproportionate impacts of environmental harm on marginalized communities.</category>
-                    <category id="3.2">3.2 - Envs and justice don't mix: Social justice does not belong in environmental policies or movements.</category>
-                    <category id="3.3">3.3 - Marginalized people are to blame for their own problems: Marginalized people suffer disparate health outcomes or other negative environmental impacts as a result of their own choices.</category>
-                    <category id="3.4">3.4 - EJ is silly: The concept of environmenatal/climate in/justice is ridiculous and even laughable, including sarcastic attitude to the EJ movement.</category>
-                    <category id="4">4 - EJ mischaracterization: Environmental justice movements/policies don't concern [blank], they actually concern [blank].</category>
-                    <category id="4.1">4.1 - EJ is racist: Environmental/climate justice movements/policies will only sew further division or otherwise lead to further marginalization.</category>
-                    <category id="4.2">4.2 - EJ has no clear definition</category>
-                    <category id="4.3">4.3 - EJ as trojan horse: Environmental/climate justice movements/policies are simply a way for politicians/activists to assert a malicious ulterior motive.</category>
+                    <category id="3.2">3.2 - Environment and justice don't mix: Social justice does not belong in environmental policies or movements.</category>
+                    <category id="3.3">3.3 - Marginalized people are to blame for their own problems</category>
+                    <category id="3.4">3.4 - Environmental justice is silly: Environmental justice ridiculous and even laughable, including sarcastic attitude to the EJ movement.</category>
+                    <category id="4">4 - Environmental justice mischaracterization.</category>
+                    <category id="4.1">4.1 - Environmental justice is racist: Environmental/climate justice movements/policies will only sew further division or otherwise lead to further marginalization.</category>
+                    <category id="4.2">4.2 - Environmental justice has no clear definition</category>
+                    <category id="4.3">4.3 - Environmental justice as trojan horse: Environmental/climate justice movements/policies are simply a way for politicians/activists to assert a malicious ulterior motive.</category>
 
                     IMPORTANT:
                     - If none of the categories fit, please assign the category of '0.0'. 
