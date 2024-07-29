@@ -1,20 +1,25 @@
-from openai import OpenAI
-import ast
-import os
+from openai import OpenAI, OpenAIError
 import re
 
+# Define the APIClient class
 class APIClient():
-    def __init__(self):
+    def __init__(self, api_key):
+        self.api_key = api_key
         self.default_model = "gpt-4-turbo"
         self.temperature = 0
         self.max_tokens = 1500
         self.denial_subclaims = ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8", "2.1", "2.2", "2.3", "2.4", "3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "5.1", "5.2", "5.3"]
         self.delay_subclaims = ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "5.4"]
+        self.client = OpenAI(api_key=self.api_key)  # Initialize the OpenAI client here
 
-    
+    def validate_api_key(self):
+        try:
+            self.client.models.list()
+        except Exception as e:
+            raise OpenAIError("Invalid API key.") from e
+
+    # Automatic chain of thought. 
     def ACoT_pipeline(self, statement):
-        client = OpenAI(api_key=os.getenv(""))
-        
         messages = [{"role": "system", "content":f"""
                     You are a climate change communications expert. You will be given a paragraph that possibly alludes to climate skepticism. Use this codebook to assign it a category.
                     
@@ -61,7 +66,7 @@ class APIClient():
                     """},
                     {"role":"user", "content": "A) Let's think step by step"}]
 
-        response_object = client.chat.completions.create(model=self.default_model,
+        response_object = self.client.chat.completions.create(model=self.default_model,
             messages=messages,
             max_tokens=self.max_tokens,
             temperature=self.temperature)
