@@ -1,16 +1,21 @@
 import streamlit as st
 from openai import OpenAIError
 from api_denial import APIClient
+from api_ej import APIEJClient
 
 # Streamlit app
-st.title("Large Language Model Classification of Climate Denial and Delay")
+st.title("Climate Discourse LLM Classifiers")
+st.subheader("Climate and Development Lab, Brown University")
+
+# Sidebar for page selection
+page = st.sidebar.selectbox("Choose a page", ["Denial and Delay Classifier", "Anti-EJ Classifier"])
 
 if 'api_key' not in st.session_state:
     st.session_state['api_key'] = None
 
 # Define the function to classify text using OpenAI GPT
-def classify_text(input_text, api_key):
-    client = APIClient(api_key=api_key)
+def classify_denial_text(input_text, api_key, client_class):
+    client = client_class(api_key=api_key)
     result, response, claims_list = client.ACoT_pipeline(input_text)
     
     return_text = result
@@ -24,6 +29,14 @@ def classify_text(input_text, api_key):
     else:
         return_text = "something went wrong."
     return return_text
+
+# Define the function to classify text using OpenAI GPT
+def classify_EJ_text(input_text, api_key, client_class):
+    client = client_class(api_key=api_key)
+    result, response= client.ACoT_pipeline(input_text)
+    
+    return result
+    
 
 def validate_api_key(api_key):
     try:
@@ -44,13 +57,25 @@ if st.session_state['api_key'] is None:
         else:
             st.error("Invalid API key. Please try again.")
 else:
-    st.header("Classification")
-    user_input = st.text_area("Input text", height=150)
+    if page == "Denial and Delay Classifier":
+        st.header("Denial and Delay Classifier")
+        user_input = st.text_area("Input text", height=150)
 
-    if st.button("Classify"):
-        if user_input:
-            with st.spinner('Classifying...'):
-                classification_result = classify_text(user_input, st.session_state['api_key'])
-                st.success(f"Classification: {classification_result}")
-        else:
-            st.error("Please enter some text to classify.")
+        if st.button("Classify"):
+            if user_input:
+                with st.spinner('Classifying...'):
+                    classification_result = classify_denial_text(user_input, st.session_state['api_key'], APIClient)
+                    st.success(f"Classification: {classification_result}")
+            else:
+                st.error("Please enter some text to classify.")
+    elif page == "Anti-EJ Classifier":
+        st.header("Anti-EJ Classifier")
+        user_input = st.text_area("Input text", height=150)
+
+        if st.button("Classify"):
+            if user_input:
+                with st.spinner('Classifying...'):
+                    classification_result = classify_EJ_text(user_input, st.session_state['api_key'], APIEJClient)
+                    st.success(f"Classification: {classification_result}")
+            else:
+                st.error("Please enter some text to classify.")
