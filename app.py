@@ -40,7 +40,7 @@ if st.session_state['api_key'] is None:
         if validate_api_key(api_key):
             st.session_state['api_key'] = api_key
             st.success("Login successful!")
-            st.experimental_rerun()
+            st.rerun()
         else:
             st.error("Invalid API key. Please try again.")
 else:
